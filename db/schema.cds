@@ -1,5 +1,27 @@
 namespace db.schema;
 
+//// Testing ENUM
+// type Gender   : String enum {
+//     Male;
+//     Female
+// };
+//
+// entity Order {
+//     ClientGender : Gender;
+//     Status       : Integer enum {
+//         Canceled   = 0;
+//         Opened     = 1;
+//         Fullfilled = 2;
+//         Shipped    = 3;
+//         Submitted  = 4;
+//     };
+//     Priority     : String @assert.range enum {
+//         high;
+//         medium;
+//         low
+//     };
+// }
+
 type Adress {
     Street     : String;
     City       : String;
@@ -8,14 +30,15 @@ type Adress {
     Country    : String(3);
 };
 
-type Dec_16_2 : Decimal(16,2);
+type Dec_16_2 : Decimal(16, 2);
 
 entity Products {
     key ID               : UUID;
-        Name             : String;
+        Name             : String default 'NoName';
         Description      : String;
         ImageURL         : String;
-        ReleaseDate      : DateTime;
+        ReleaseDate      : DateTime default $now;
+        // CreationDate     : Date default CURRENT_DATE;
         DiscontinuedDate : DateTime;
         Price            : Dec_16_2;
         Height           : type of Price;
@@ -26,7 +49,7 @@ entity Products {
 
 entity Suppliers {
     key ID     : UUID;
-        Name   : type of Products:Name;
+        Name   : type of Products : Name;
         Adress : Adress;
         Email  : String;
         Phone  : String;
