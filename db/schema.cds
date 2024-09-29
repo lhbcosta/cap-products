@@ -8,6 +8,8 @@ type Adress {
     Country    : String(3);
 };
 
+type Dec_16_2 : Decimal(16,2);
+
 entity Products {
     key ID               : UUID;
         Name             : String;
@@ -15,8 +17,8 @@ entity Products {
         ImageURL         : String;
         ReleaseDate      : DateTime;
         DiscontinuedDate : DateTime;
-        Price            : Decimal(16, 2);
-        Height           : Decimal(16, 2);
+        Price            : Dec_16_2;
+        Height           : type of Price;
         Width            : Decimal(16, 2);
         Depth            : Decimal(16, 2);
         Quantity         : Decimal(16, 2);
@@ -24,7 +26,7 @@ entity Products {
 
 entity Suppliers {
     key ID     : UUID;
-        Name   : String;
+        Name   : type of Products:Name;
         Adress : Adress;
         Email  : String;
         Phone  : String;
