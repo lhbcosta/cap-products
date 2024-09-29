@@ -1,4 +1,4 @@
-ID,Name,Street,City,State,PostalCode,Country,Email,Phone,Fax
+ID,Name,Adress_Street,Adress_City,Adress_State,Adress_PostalCode,Adress_Country,Email,Phone,Fax
 1,"Martin, Mejia and May",7213 Koch Haven,Jasonhaven,KY,79419,Slovakia (Slovak Republic),michelledaniel@gonzales.com,(070)867-9355,001-258-721-3275x717
 2,Hudson Group,2292 Moore Tunnel,South Scottfort,DE,52581,Svalbard & Jan Mayen Islands,nicholsrobert@diaz-williams.org,125-729-8950x1030,001-699-879-0349x509
 3,Randall Ltd,40590 Daniel Valleys,New Samuel,HI,67436,Kuwait,davidpotter@west.org,771-729-8050x908,+1-676-995-8644

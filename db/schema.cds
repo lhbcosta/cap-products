@@ -1,5 +1,13 @@
 namespace db.schema;
 
+type Adress {
+    Street     : String;
+    City       : String;
+    State      : String(2);
+    PostalCode : String(5);
+    Country    : String(3);
+};
+
 entity Products {
     key ID               : UUID;
         Name             : String;
@@ -14,21 +22,17 @@ entity Products {
         Quantity         : Decimal(16, 2);
 };
 
-entity Supplier {
-    key ID         : UUID;
-        Name       : String;
-        Street     : String;
-        City       : String;
-        State      : String(2);
-        PostalCode : String(5);
-        Country    : String(3);
-        Email      : String;
-        Phone      : String;
-        Fax        : String;
+entity Suppliers {
+    key ID     : UUID;
+        Name   : String;
+        Adress : Adress;
+        Email  : String;
+        Phone  : String;
+        Fax    : String;
 };
 
 entity Category {
-    key ID    : String(1);
+    key ID   : String(1);
         Name : String;
 };
 
